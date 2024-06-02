@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENEtechs</title>
+  </head>
+  <style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: Poppins, sans-serif; 
+	}
+	header{
+		z-index: 999;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 200px;
+		transition: 0.5s ease;
+		background: #000;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.logo{
+		margin-top: 0px;
+		margin-left: 50px;
+		width: 140px;
+		height: 40px;
+	}
+	.logo img{
+		width: 100%;
+		height: auto;
+		mix-blend-mode: screen;
+	}
+	.navigation{
+		position: relative;
+		margin-right: 80px;
+	}
+	header .navigation .navigation-items a{
+		position: relative;
+		color: #a9ffa1;
+		font-size: 1em;
+		font-weight: 500;
+		text-decoration: none;
+		margin-left: 40px;
+		transition: 0.3s ease;
+	}
+	header .navigation .navigation-items a:before{
+		content: '';
+		position: absolute;
+		background: #b5deff;
+		width: 0;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		transition: 0.5s ease;
+	}
+	header .navigation .navigation-items a:hover:before{
+		width: 100%;
+	}
+	.video-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+	.container{
+		display: grid;
+		place-items: center;
+		margin-inline: 1.5rem;
+		padding-block: 5rem; 
+	}
+	.card--container{
+		display: grid;
+		row-gap: 3.5rem;
+	}
+	.card--article{
+		position: relative;
+		overflow: hidden;
+	}
+	.card--img{
+		width: 328px;
+		height: 348px;
+		border-radius: 1.5rem;
+	}
+	.card--data{
+		width: 280px;
+		background-color: white;
+		padding: 1.5rem 2rem;
+		box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+		border-radius: 1rem;
+		position: absolute;
+		bottom: -9rem;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		opacity: 0;
+		transition: opacity 1s 1s;
+	}
+	.card--description{
+		display: block;
+		font-size: var(--small--font--size);
+		margin-bottom: .25rem;
+	}
+	.card--title{
+		font-size: var(--h2--font--size);
+		font-weight: 800;
+		color: var(--title--color);
+		margin-bottom: .75rem;
+	}
+	.card--article:hover .card--data{
+		animation: show-data 1s forwards;
+		opacity: 1;
+		transition: opacity .3s;
+	}
+	.card--article:hover{
+		animation: remove-overflow 2s forwards;
+	}
+	.card--article:not(:hover){
+		animation: show-overflow 2s forwards;
+	}
+	.card--article:not(:hover) .card--data{
+		animation: remove-data 1s forwards;
+	}
+	@keyframes show-data{
+		50%{
+			transform: translateY(-10rem);
+		}
+		100%{
+			transform: translateY(-7rem);
+		}
+	}
+	@keyframes remove-overflow{
+		to{
+			overflow: initial;
+		}
+	}
+	@keyframes remove-data{
+		0%{
+			transform: translateY(-7rem);
+		}
+		50%{
+			transform: translateY(-10rem);
+		}
+		100%{
+			transform: translateY(.5rem);
+		}
+	}
+	@keyframes show-overfow{
+		0%{
+			overflow: initial;
+			pointer-events: none;
+		}
+		50%{
+			overflow: hidden;
+		}
+	}
+	@media screen and (max-width: 340px){
+		.container{
+			margin-inline: 1rem;
+		}
+		.card--data{
+			width: 250px;
+			padding: 1rem;
+		}
+	}
+	@media screen and (min-width: 768px){
+		.card--container{
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 1.5rem;
+		}
+	}
+	@media screen and (min-width: 1120px){
+		.container{
+			height: 100vh;
+		}
+		.card--container{
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.card--img{
+			width: 348px;
+		}
+		.card--data{
+			width: 316px;
+			padding-inline: 2.5rem;
+		}
+	}
+  </style>
+  <body>
+		<video class="video-background" autoplay muted loop>
+		<source src="vide0.mp4" type="video/mp4">
+		</video>
+		<div class="overlay"></div>
+	<header>
+		<div class="logo"><a href="#"><img src="logo.jpg"></a></div>
+		<div class="navigation">
+			<div class="navigation-items">
+				<a href="genetecs.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="testing.html">Testing</a>
+				<a href="signn.html">Sign In</a>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="card--container">
+			<article class="card--article">
+				<img src="pagee1.jpg" alt="image" class="card--img">
+			
+				<div class="card--data">
+					<span class="card--description">Provide a DNA sample, usually throught a saliva test</span>
+					<h2 class="card--title">Sample Collection</h2>
+				</div>
+			</article>
+			
+			<article class="card--article">
+				<img src="pagee2.jpg" alt="image" class="card--img">
+			
+				<div class="card--data">
+					<span class="card--description">Sample is analyzed in a lab to identify genetic markers that indicates ancestral origins</span>
+					<h2 class="card--title">DNA Analysis</h2>
+				</div>
+			</article>
+			
+			<article class="card--article">
+				<img src="pagee3.jpg" alt="image" class="card--img">
+			
+				<div class="card--data">
+					<span class="card--description">Samples are compared with databases of genetic information to determine ethnic and ancestral lineage</span>
+					<h2 class="card--title">Comparison and Results</h2>
+				</div>
+			</article>
+			</div>
+		<div>
+	</div
+  </body>
+  <script>
+  </script>
+</html>

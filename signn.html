@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENEtechs</title>
+  </head>
+  <style>
+	*{
+		margin: 0;
+		pading: 0;
+		box-sizing: border-box;
+		font-family: Poppins, sans-serif; 
+	}
+	body{
+	}
+	header{
+		z-index: 999;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 200px;
+		transition: 0.5s ease;
+		background: #000;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.logo{
+		margin-top: 0px;
+		margin-left: 50px;
+		width: 140px;
+		height: 40px;
+	}
+	.logo img{
+		width: 100%;
+		height: auto;
+		mix-blend-mode: screen;
+	}
+	.navigation{
+		position: relative;
+		margin-right: 80px;
+	}
+	header .navigation .navigation-items a{
+		position: relative;
+		color: #a9ffa1;
+		font-size: 1em;
+		font-weight: 500;
+		text-decoration: none;
+		margin-left: 40px;
+		transition: 0.3s ease;
+	}
+	header .navigation .navigation-items a:before{
+		content: '';
+		position: absolute;
+		background: #b5deff;
+		width: 0;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		transition: 0.5s ease;
+	}
+	header .navigation .navigation-items a:hover:before{
+		width: 100%;
+	}
+	section{
+		padding: 100px 200px;
+	}
+	.home{
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.home .content{
+		z-index: 888;
+		color: white;
+		width: 40%;
+		margin-top: 50px;
+	}
+	.home .content h1{
+		font-size: 6em;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		line-height: 90px;
+		margin-bottom: 30px;
+	}
+	.home .content h1:hover{
+		transition: 0.10 ease;
+		color:  #a9ffa1;
+		transform: scale(1.2);
+	}
+	.video-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+	}
+	 form{
+        position: absolute;
+		top: 50%;
+		right: 10%;
+		transform: translateY(-50%);
+		width: 300px;
+		padding: 20px;
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(10px);
+		border-radius: 10px;
+		z-index: 999;
+    }
+    fieldset{
+        border: none;
+    }
+    legend{
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea,
+    input[type="password"]{
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button[type="submit"],
+    button[type="reset"] {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button[type="submit"]:hover,
+    button[type="reset"]:hover {
+        background-color: #45a049;
+    }
+    .error {
+        border: 2px solid red !important;
+    }
+    .success {
+        border: 2px solid green !important;
+    }
+  </style>
+  <body>
+		<video class="video-background" autoplay muted loop>
+		<source src="vide0.mp4" type="video/mp4">
+		</video>
+		<div class="overlay"></div>
+	<header>
+		<div class="logo"><a href="#"><img src="logo.jpg"></a></div>
+		<div class="navigation">
+			<div class="navigation-items">
+				<a href="genetecs.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="testing.html">Testing</a>
+				<a href="signn.html">Sign In</a>
+			</div>
+		</div>
+	</header>
+	<section class="home">
+		<div class="content">
+			<h1>Redifining.<br><span>Healthcare</span></h1>
+			<p>Revolutionizing health and biological makeup. By analysing our DNA, genetic testing can
+				reveal vital information about your heritage, predispositions to certain health conditions,
+				and personalized insights into your body's response to medication.</p>
+		</div>
+	</section>
+	<form id="signup-form">
+    <fieldset>
+        <legend>SIGN UP</legend>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required onblur="validateInput(this)" onfocus="resetBorder(this)">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required onblur="validateInput(this)" onfocus="resetBorder(this)">
+        
+        <label for="confirm-pass">Confirm Password:</label>
+        <input type="password" id="confirm-pass" name="confirm-pass" required onblur="validateInput(this)" onfocus="resetBorder(this)">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required onblur="validateInput(this)" onfocus="resetBorder(this)">
+        
+        <button type="submit">Submit</button>
+        <button type="reset" onclick="clearForm()">Reset</button>
+    </fieldset>
+		<div id="output"></div>
+	</form>
+  </body>
+  <script>
+    var form = document.getElementById('signup-form');
+    var output = document.getElementById('output');
+
+    function validateInput(element) {
+        if (element.value.trim() === '') {
+            element.classList.add('error');
+            element.classList.remove('success');
+        } else {
+            element.classList.remove('error');
+            element.classList.add('success');
+        }
+    }
+
+    function resetBorder(element) {
+        element.classList.remove('error');
+        element.classList.add('success');
+    }
+
+    function clearForm() {
+        form.reset();
+        output.innerHTML = '';
+        var inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(function (input) {
+            input.classList.remove('error', 'success');
+        });
+    }
+	
+	form.addEventListener('sumbit', function(event) {
+        event.preventDefault();
+        var formData = new FormData(form);
+        var userData = Object.fromEntries(formData);
+        if (userData['password'] !== userData['confirm-pass']) {
+            alert("Passwords don't match!");
+            return;
+        }
+        displayWelcomeMessage(userData['name']);
+        form.reset();
+    });
+
+    function displayWelcomeMessage(username) {
+        output.innerHTML = '<h2>Welcome, ' + username + '!</h2>';
+    }
+  </script>
+</html>
+
+    

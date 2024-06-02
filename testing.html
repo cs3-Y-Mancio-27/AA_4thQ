@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENEtechs</title>
+  </head>
+  <style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: Poppins, sans-serif; 
+	}
+	header{
+		z-index: 999;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 200px;
+		transition: 0.5s ease;
+		background: #000;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.logo{
+		margin-top: 0px;
+		margin-left: 50px;
+		width: 140px;
+		height: 40px;
+	}
+	.logo img{
+		width: 100%;
+		height: auto;
+		mix-blend-mode: screen;
+	}
+	.navigation{
+		position: relative;
+		margin-right: 80px;
+	}
+	header .navigation .navigation-items a{
+		position: relative;
+		color: #a9ffa1;
+		font-size: 1em;
+		font-weight: 500;
+		text-decoration: none;
+		margin-left: 40px;
+		transition: 0.3s ease;
+	}
+	header .navigation .navigation-items a:before{
+		content: '';
+		position: absolute;
+		background: #b5deff;
+		width: 0;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		transition: 0.5s ease;
+	}
+	header .navigation .navigation-items a:hover:before{
+		width: 100%;
+	}
+	.video-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+	#accordion{
+		margin: 100px auto;
+		width: 600px;
+	}
+	#accordion li{
+		list-style: none;
+		width: 100%;
+		margin-bottom: 10px;
+		background: linear-gradient(90deg, rgba(130,241,246,.6) 0%, rgba(6,41,87,.6) 100%);
+		padding: 10px;
+		border-radius: 4px;
+	}
+	#accordion li label{
+		padding: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 18px;
+		font-weight: 500;
+		cursor: pointer;
+		color: #a9ffa1;
+	}
+	#accordion li label span{
+		transform: rotate(90deg);
+		font-size: 15px;
+		color: white;
+	}
+	#accordion label + input[type="radio"]{
+		display: none;
+	}
+	#accordion .content{
+		padding: 0 10px;
+		line-height: 26px;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.5s;
+		color: white;
+	}
+	#accordion label + input[type="radio"]:checked + .content{
+		max-height: 400px;
+	}
+	</style>
+	<body>
+			<video class="video-background" autoplay muted loop>
+			<source src="vide0.mp4" type="video/mp4">
+			</video>
+			<div class="overlay"></div>
+		<header>
+			<div class="logo"><a href="#"><img src="logo.jpg"></a></div>
+			<div class="navigation">
+				<div class="navigation-items">
+					<a href="genetecs.html">Home</a>
+					<a href="about.html">About</a>
+					<a href="testing.html">Testing</a>
+					<a href="signn.html">Sign In</a>
+				</div>
+			</div>
+		</header>
+		<ul id="accordion">
+			<li>
+				<label for="first">Diagnostic Testing<span>&#x3e;</span></label>
+				<input type="radio" name="accordion" id="first" checked>
+				<div class="content">
+					<p>Identifies genetic mutations that cause or contribute to a condition.</p>
+				<div>
+			</li>
+			<li>
+				<label for="second">Predictive and Symptomatic Testing<span>&#x3e;</span></label>
+				<input type="radio" name="accordion" id="second">
+				<div class="content">
+					<p>Detects gene mutations associated with disorders that appear after birth, often later in life.</p>
+				<div>
+			</li>
+			<li>
+				<label for="third">Carrier Testing<span>&#x3e;</span></label>
+				<input type="radio" name="accordion" id="third">
+				<div class="content">
+					<p>Determines if you carry  a gene for a genetic disorder that could be passed.</p>
+				<div>
+			</li>
+			<li>
+				<label for="fourth">Prenatal Testing<span>&#x3e;</span></label>
+				<input type="radio" name="accordion" id="fourth">
+				<div class="content">
+					<p>Identifies genetic changes in a fetus before birth.</p>
+				<div>
+			</li>
+			<li>
+				<label for="fifth">Newborn Screening<span>&#x3e;</span></label>
+				<input type="radio" name="accordion" id="fifth">
+				<div class="content">
+					<p>Detects genetic disorders later in life.</p>
+				<div>
+			</li>
+			<li>
+				<label for="fifth">Pharmacogenomics<span>&#x3e;</span></label>
+				<input type="radio" name="accordion" id="fifth">
+				<div class="content">
+					<p>Researches and studies how genes affect a person's response to drugs.</p>
+				<div>
+			</li>
+			<li>
+				<label for="fifth">Ancestry Testing<span>&#x3e;</span></label>
+				<input type="radio" name="accordion" id="fifth">
+				<div class="content">
+					<p>Provides and examines information about your ancestry and heritage.</p>
+				<div>
+			</li>
+		</ul>
+	</body>
+</html>
